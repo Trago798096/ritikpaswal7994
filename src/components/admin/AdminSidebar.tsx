@@ -1,14 +1,12 @@
-
-import { useState, useEffect } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { 
   Sidebar, SidebarContent, SidebarHeader, SidebarFooter, SidebarGroup, 
   SidebarGroupLabel, SidebarGroupContent, SidebarMenu, SidebarMenuItem, 
   SidebarMenuButton, useSidebar 
 } from '@/components/ui/sidebar';
 import { 
-  Home, ShoppingCart, Users, BarChart3, Settings, LogOut, Layers, Ticket,
-  Tag, Gift, CalendarCheck, Lightbulb, Database, Bell
+  Home, ShoppingCart, Users, BarChart3, Settings, LogOut, Ticket,
+  Gift, CalendarCheck, Lightbulb
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';

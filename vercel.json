@@ -1,7 +1,8 @@
 {
+  "version": 2,
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "framework": "vite",
+  "framework": null,
   "rewrites": [
     {
       "source": "/(.*)",
@@ -17,20 +18,43 @@
           "value": "public, max-age=31536000, immutable"
         }
       ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
+      ]
     }
   ],
   "env": {
     "VITE_SUPABASE_URL": "https://cjiipnoiujwjdpewtlqi.supabase.co",
     "VITE_SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNqaWlwbm9pdWp3anRwZXd0bHFpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDk5MjY5NzAsImV4cCI6MjAyNTUwMjk3MH0.2QZQZQZQZQZQZQZQZQZQZQZQZQZQZQZQZQZQZQZQZQ",
     "VITE_SUPABASE_SERVICE_ROLE_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNjaWlwbm9pdWp3anRwZXd0bHFpIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcwOTkyNjk3MCwiZXhwIjoyMDI1NTAyOTcwfQ.2QZQZQZQZQZQZQZQZQZQZQZQZQZQZQZQZQZQZQZQZQ",
-    "VITE_API_URL": "https://bookmyshow-main.vercel.app/api"
+    "VITE_API_URL": "https://bookmyshow-main-2zbokho04-ritiks-projects-9f9f8b33.vercel.app/api",
+    "VITE_APP_ENV": "production"
   },
   "build": {
     "env": {
       "VITE_SUPABASE_URL": "${VITE_SUPABASE_URL}",
       "VITE_SUPABASE_ANON_KEY": "${VITE_SUPABASE_ANON_KEY}",
       "VITE_SUPABASE_SERVICE_ROLE_KEY": "${VITE_SUPABASE_SERVICE_ROLE_KEY}",
-      "VITE_API_URL": "${VITE_API_URL}"
+      "VITE_API_URL": "${VITE_API_URL}",
+      "VITE_APP_ENV": "production"
     }
   }
 } 
